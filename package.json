@@ -1,0 +1,34 @@
+{
+  "name": "Squidly",
+  "version": "1.0.0",
+  "description": "Squidly - accessible video calls.",
+  "main": "main.js",
+  "productName": "Squidly",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "icon": "icons",
+    "appId": "squidly.v4",
+    "mac": {
+      "category": "squidly.v4.testing.dev",
+      "target": "dmg",
+      "icon": "icons/main.icns"
+    }
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "author": "Gabriel Ralph",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^35.1.4",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "@nut-tree-fork/nut-js": "^4.2.6",
+    "firebase": "^12.6.0",
+    "robotjs": "^0.6.0"
+  }
+}
