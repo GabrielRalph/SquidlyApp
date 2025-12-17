@@ -1,0 +1,3 @@
+[submodule "Modules/RemoteControlScreenShare"]
+	path = Modules/RemoteControlScreenShare
+	url = https://github.com/GabrielRalph/RemoteControlScreenShare.git
