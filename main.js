@@ -134,9 +134,8 @@ class SquidlyElectronApp {
             webPreferences: {
                 preload: path.join(__dirname, "./preload.js")
             }
-        })
-        this.window.loadFile("./WebView/Console/index.html");
-
+        })  
+        this.window.loadURL("https://squidly.com.au/Console/");
 
         ipcMain.handle("open-window", async (req, data) => {
             let isSession = data.url.startsWith("file:///V3");
