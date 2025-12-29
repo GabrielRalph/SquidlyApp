@@ -1,4 +1,4 @@
-const {screen, dialog, app, BrowserWindow, ipcMain, Menu, MenuItem} = require("electron");
+const {screen, dialog, app, BrowserWindow, ipcMain, Menu, MenuItem, desktopCapturer} = require("electron");
 const path = require("path");
 const isMac = process.platform === 'darwin'
 
@@ -145,6 +145,18 @@ class SquidlyElectronApp {
                 this.openLink(data.url);
             }
         })
+
+        ipcMain.handle('get-sources', async () => {
+            const sources = await desktopCapturer.getSources({
+                types: ['window', 'screen'],
+                thumbnailSize: { width: 300, height: 200 }
+            });
+            return sources.map(source => ({
+                id: source.id,
+                name: source.name,
+                thumbnail: source.thumbnail.toDataURL()
+            }));
+        });
     }
 
 
