@@ -3,3 +3,4 @@ node_modules
 *.sh
 .DS_Store
 *.code-workspace
+/login/
