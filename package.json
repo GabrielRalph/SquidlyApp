@@ -6,6 +6,7 @@
   "productName": "Squidly",
   "scripts": {
     "start": "electron .",
+    "start:local": "USE_LOCAL=true electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
